@@ -18,7 +18,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Level-2" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -29,11 +29,27 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1608919049958</updated>
-      <workItem from="1608919051045" duration="207000" />
+      <workItem from="1608919051045" duration="596000" />
+      <workItem from="1608920833344" duration="4499000" />
+      <workItem from="1608931227036" duration="5239000" />
+      <workItem from="1608969358781" duration="3672000" />
+      <workItem from="1608976802361" duration="1794000" />
+      <workItem from="1608981730292" duration="63000" />
+      <workItem from="1609000446906" duration="802000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="769" y="221" key="#Inspections" timestamp="1608972383554">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="769" y="221" key="#Inspections/0.0.1920.1040@0.0.1920.1040" timestamp="1608972383554" />
+    <state x="988" y="302" key="FileChooserDialogImpl" timestamp="1609000458970">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="988" y="302" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1609000458970" />
   </component>
 </project>

@@ -3,3 +3,37 @@
     margin: 0 0;
     padding: 0 0;
 }
+
+.wrapper {
+    max-width: 1200px;
+    min-height: 100px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, .08);
+}
+
+#usersTable {
+}
+
+#table {
+}
+
+#table-head {
+}
+
+#table-body {
+}
+
+#head-tr {
+}
+
+#body-tr {
+}
+
+#head-th {
+}
+
+#head-td {
+}
