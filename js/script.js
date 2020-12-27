@@ -3,14 +3,12 @@ function DataTable(config, data) {
     const table = document.createElement("table"),
         tHead = document.createElement("tHead"),
         tBody = document.createElement("tBody"),
-        trHead = document.createElement("tr"),
-        trBody = document.createElement("tr");
+        trHead = document.createElement("tr");
 
     table.id = "table";
     tHead.id = "table-head";
     tBody.id = "table-body";
     trHead.id = "head-tr"
-    trBody.id = "body-tr"
 
     usersTable.appendChild(table);
     const Table = document.getElementById("table");
@@ -18,39 +16,46 @@ function DataTable(config, data) {
     Table.appendChild(tBody);
 
     const tableHead = document.getElementById("table-head");
-    const tableBody = document.getElementById("table-body");
     tableHead.append(trHead);
-    tableBody.append(trBody);
-
     const headTr = document.getElementById("head-tr");
-    const bodyTr = document.getElementById("body-tr");
 
-    /*Add Head columns*/
-    makeTableRows(data, bodyTr, "td")
-    /*Add Body columns*/
-    makeTableRows(config.columns, headTr, "th")
+
+
+    makeTableHead(config.columns, headTr, "th")
+    makeTableBody(data, "td")
+
+
 }
-
-function makeTableRows(object, tableRow, tagName) {
-    if (tagName === "th") {
-        let typeRow = document.createElement(tagName);
-        typeRow.id = `head-${tagName}`;
-        typeRow.textContent = "№";
-        tableRow.append(typeRow);
-    }
+function makeTableHead(object, tableRow, tagName) {
+    let typeRow = document.createElement(tagName);
+    typeRow.textContent = "№";
+    tableRow.append(typeRow);
     Object.keys(object)
         .forEach(function eachKey(key) {
             for (let value in object[key]) {
                 let typeRow = document.createElement(tagName);
-                typeRow.id = `head-${tagName}`;
                 if (value === "value") continue;    // skip value from config1
+                typeRow.textContent = object[key][value];
+                tableRow.append(typeRow);
+            }
+        });
+}
+function makeTableBody(object, tagName) {
+    const tableBody = document.getElementById("table-body");
+    Object.keys(object)
+        .forEach(function eachKey(key) {
+            let trBody = document.createElement("tr");
+            tableBody.append(trBody);
+            let bodyTr = tableBody.lastChild;
+            for (let value in object[key]) {
+                let typeRow = document.createElement(tagName);
                 if (value === 'id') {   // display users id value 1, 2, 3...
                     typeRow.textContent = `${key * 1 + 1}`;
-                    tableRow.append(typeRow);
+                    bodyTr.append(typeRow);
                     continue;
                 }
                 typeRow.textContent = object[key][value];
-                tableRow.append(typeRow);
+                bodyTr.append(typeRow);
             }
         });
 }
