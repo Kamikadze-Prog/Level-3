@@ -2,41 +2,39 @@ function DataTable(config, data) {
     const usersTable = document.querySelector(config.parent);
     const table = document.createElement("table"),
         tHead = document.createElement("tHead"),
-        tBody = document.createElement("tBody"),
-        trHead = document.createElement("tr");
+        tBody = document.createElement("tBody")
 
     table.id = "table";
     tHead.id = "table-head";
     tBody.id = "table-body";
-    trHead.id = "head-tr"
+
 
     usersTable.appendChild(table);
     const Table = document.getElementById("table");
     Table.appendChild(tHead);
     Table.appendChild(tBody);
 
+
+    makeTableHead(config.columns,   "th")
+    makeTableBody(data, "td")
+
+}
+function makeTableHead(object,  tagName) {
+    let trHead = document.createElement("tr");
+    trHead.id = "head-tr"
     const tableHead = document.getElementById("table-head");
     tableHead.append(trHead);
     const headTr = document.getElementById("head-tr");
-
-
-
-    makeTableHead(config.columns, headTr, "th")
-    makeTableBody(data, "td")
-
-
-}
-function makeTableHead(object, tableRow, tagName) {
     let typeRow = document.createElement(tagName);
     typeRow.textContent = "№";
-    tableRow.append(typeRow);
+    headTr.append(typeRow);
     Object.keys(object)
         .forEach(function eachKey(key) {
             for (let value in object[key]) {
                 let typeRow = document.createElement(tagName);
                 if (value === "value") continue;    // skip value from config1
                 typeRow.textContent = object[key][value];
-                tableRow.append(typeRow);
+                headTr.append(typeRow);
             }
         });
 }
