@@ -15,7 +15,6 @@
 }
 
 table {
-
     table-layout: fixed;
     width: 500px;
     border-collapse: collapse;
@@ -70,7 +69,6 @@ tr {
 }
 
 td {
-
     padding: 5px;
     font-family: Roboto, sans-serif;
     font-size: 16px;
@@ -81,7 +79,7 @@ th, td {
     border-left: 1px solid #142535;;
 }
 
-thead :hover{
+thead tr :hover{
     background-color: #262424;
     cursor: pointer;
 }
