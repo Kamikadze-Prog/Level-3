@@ -3,14 +3,10 @@ function DataTable(config, data) {
     const table = document.createElement("table"),
         tHead = document.createElement("tHead"),
         tBody = document.createElement("tBody")
-
-    table.id = "table";
-    tHead.id = "table-head";
-    tBody.id = "table-body";
-
+ 
 
     usersTable.appendChild(table);
-    const Table = document.getElementById("table");
+    const Table = document.querySelector('table');
     Table.appendChild(tHead);
     Table.appendChild(tBody);
 
@@ -22,9 +18,9 @@ function DataTable(config, data) {
 function makeTableHead(object,  tagName) {
     let trHead = document.createElement("tr");
     trHead.id = "head-tr"
-    const tableHead = document.getElementById("table-head");
+    const tableHead = document.querySelector('thead');
     tableHead.append(trHead);
-    const headTr = document.getElementById("head-tr");
+    const headTr = tableHead.lastChild
     let typeRow = document.createElement(tagName);
     typeRow.textContent = "№";
     headTr.append(typeRow);
@@ -39,7 +35,7 @@ function makeTableHead(object,  tagName) {
         });
 }
 function makeTableBody(object, tagName) {
-    const tableBody = document.getElementById("table-body");
+    const tableBody = document.querySelector('tbody');
     Object.keys(object)
         .forEach(function eachKey(key) {
             let trBody = document.createElement("tr");
@@ -70,6 +66,12 @@ const config1 = {
 const users = [
     {id: 30050, name: 'Вася', surname: 'Петров', age: 12},
     {id: 30051, name: 'Вася', surname: 'Васечкин', age: 15},
+    {id: 30052, name: 'Теневой', surname: 'Васечка', age: 15},
+    {id: 30053, name: 'Клон', surname: 'Васечки', age: 15},
+    {id: 30054, name: 'Просто', surname: 'Чел', age: 99},
+    {id: 30055, name: 'Саня', surname: 'Сосед', age: 30},
+    {id: 30056, name: 'Друг', surname: 'Сани', age: 33},
+
 ];
 
 DataTable(config1, users);
