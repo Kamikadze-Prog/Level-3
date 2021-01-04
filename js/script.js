@@ -3,7 +3,6 @@ function DataTable(config, data) {
     const table = document.createElement("table"),
         tHead = document.createElement("tHead"),
         tBody = document.createElement("tBody")
- 
 
     usersTable.appendChild(table);
     const Table = document.querySelector('table');
@@ -11,13 +10,13 @@ function DataTable(config, data) {
     Table.appendChild(tBody);
 
 
-    makeTableHead(config.columns,   "th")
+    makeTableHead(config.columns, "th")
     makeTableBody(data, "td")
 
 }
-function makeTableHead(object,  tagName) {
+
+function makeTableHead(object, tagName) {
     let trHead = document.createElement("tr");
-    trHead.id = "head-tr"
     const tableHead = document.querySelector('thead');
     tableHead.append(trHead);
     const headTr = tableHead.lastChild
@@ -34,6 +33,7 @@ function makeTableHead(object,  tagName) {
             }
         });
 }
+
 function makeTableBody(object, tagName) {
     const tableBody = document.querySelector('tbody');
     Object.keys(object)
