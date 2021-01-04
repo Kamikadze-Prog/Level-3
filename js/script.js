@@ -9,7 +9,6 @@ function DataTable(config, data) {
     Table.appendChild(tHead);
     Table.appendChild(tBody);
 
-
     makeTableHead(config.columns, "th")
     makeTableBody(data, "td")
 

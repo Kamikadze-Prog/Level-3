@@ -7,11 +7,44 @@
     <link rel="stylesheet" href="./style/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
-
+    <link href="https://unpkg.com/tabulator-tables@4.9.3/dist/css/tabulator.min.css" rel="stylesheet">
 </head>
 
 <body>
-    <div id="usersTable"></div>
+<div id="usersTable"></div>
+
+<div class="tabulator-Main-Text">Tabulator Example</div>
+<div id="example-table"></div>
+
 <script src="./js/script.js"></script>
+<script type="text/javascript" src="./js/tabulator.js"></script>
+<script>
+
+    //sample data
+    var tabledata = [
+        {id: 30050, name: 'Вася', surname: 'Петров', age: 12},
+        {id: 30051, name: 'Вася', surname: 'Васечкин', age: 15},
+        {id: 30052, name: 'Теневой', surname: 'Васечка', age: 15},
+        {id: 30053, name: 'Клон', surname: 'Васечки', age: 15},
+        {id: 30054, name: 'Просто', surname: 'Чел', age: 99},
+        {id: 30055, name: 'Саня', surname: 'Сосед', age: 30},
+        {id: 30056, name: 'Друг', surname: 'Сани', age: 33},
+    ];
+
+    var table = new Tabulator("#example-table", {
+        height: 200, // set height of table to enable virtual DOM
+        data: tabledata, //load initial data into table
+        layout: "fitColumns", //fit columns to width of table (optional)
+        columns: [ //Define Table Columns
+
+            {title: 'Имя', field: 'name'},
+            {title: 'Фамилия', field: 'surname'},
+            {title: 'Возраст', field: 'age'},
+        ],
+        rowClick: function (e, row) { //trigger an alert message when the row is clicked
+            alert("Row " + row.getIndex() + " Clicked!!!!");
+        },
+    });
+</script>
 </body>
 </html>

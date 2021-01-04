@@ -92,3 +92,11 @@ tbody tr:nth-child(even):hover {
     background-color: #586f86;;
     cursor: pointer;
 }
+
+
+.tabulator-Main-Text {
+    margin: 20px;
+display: flex;
+    justify-content: center;
+
+}
