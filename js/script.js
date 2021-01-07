@@ -19,12 +19,13 @@ function makeTableHead(object, tagName) {
     const trHead = document.createElement("tr"),
         tableHead = document.querySelector('thead');
     tableHead.append(trHead);
+
     const headTr = tableHead.lastChild,
         typeRow = document.createElement(tagName);
     typeRow.textContent = "№";
     headTr.append(typeRow);
-    Object.keys(object)
-        .forEach(function eachKey(key) {
+
+    Object.keys(object).forEach(function eachKey(key) {
             let typeRow = document.createElement(tagName);
             typeRow.textContent = object[key];
             headTr.append(typeRow);
@@ -41,6 +42,7 @@ function makeTableBody(dataObject, dataValues, tagName) {
             typeRow = document.createElement(tagName);
         typeRow.textContent = index + 1;
         bodyTr.append(typeRow);
+
         dataValues.forEach(value => {
             typeRow = document.createElement(tagName);
             typeRow.textContent = dataItem[value];
