@@ -26,10 +26,8 @@ function makeTableHead(object, tagName) {
     headTr.append(typeRow);
 
     Object.keys(object).forEach(function eachKey(key) {
-            let typeRow = document.createElement(tagName);
-            typeRow.textContent = object[key];
-            headTr.append(typeRow);
-        });
+        makeTableElement(typeRow, tagName, headTr, object[key]);
+    });
 }
 
 function makeTableBody(dataObject, dataValues, tagName) {
@@ -38,17 +36,22 @@ function makeTableBody(dataObject, dataValues, tagName) {
     dataObject.forEach((dataItem, index) => {
         const trBody = document.createElement("tr");
         tableBody.append(trBody);
+
         let bodyTr = tableBody.lastChild,
             typeRow = document.createElement(tagName);
         typeRow.textContent = index + 1;
-        bodyTr.append(typeRow);
 
+        bodyTr.append(typeRow);
         dataValues.forEach(value => {
-            typeRow = document.createElement(tagName);
-            typeRow.textContent = dataItem[value];
-            bodyTr.append(typeRow);
+            makeTableElement(typeRow, tagName, bodyTr, dataItem[value]);
         })
     });
+}
+
+function makeTableElement(typeRow, tagName, headTr, key) {
+    typeRow = document.createElement(tagName);
+    typeRow.textContent = key;
+    headTr.append(typeRow);
 }
 
 const config1 = {
